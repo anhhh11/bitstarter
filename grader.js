@@ -62,7 +62,7 @@ var clone = function(fn) {
 };
 var getHtmlUrl = function(url,cb){
     restler.get(url).on('complete',function(data){
-        fs.writeFile(urlToFilename(url),data.toString(),function(err){console.error(err);cb()});
+        fs.writeFile(urlToFilename(url),data.toString(),function(){cb()});
     });
 }
 var urlToFilename = function(filename){
