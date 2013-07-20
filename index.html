@@ -1,211 +1,298 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>My First Bitstarter</title>
-	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link type="text/css" rel="stylesheet"
+<head>
+<meta charset="utf-8">
+<title>My First Bitstarter</title>
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="social-buttons.css" title="" type="" /> 
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link type="text/css" rel="stylesheet"
           href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-2.3.2.css"> -->
-    <style type="text/css">
-	 @media ( min-width: 980px) {
-		body {
-			padding-top: 60px;
-		}
-	  .linediv-l{
-		border-left: 1px white solid;
-	  }
-	  .linediv-r{
-		border-right: 1px white solid;
-	  }
-	  	  .linediv-c{
-		border-right: 1px white solid;
-				border-left: 1px white solid;
+<style type="text/css">
+@media ( min-width: 980px) {
+    body {
+        padding-top: 60px;
+    }
+    .linediv-l{
+        border-left: 1px white solid;
+    }
+    .linediv-r{
+        border-right: 1px white solid;
+    }
+    .linediv-c{
+        border-right: 1px white solid;
+        border-left: 1px white solid;
 
-	  }
-	 }
-	 @media ( max-width: 480px) {
-	 .copy {
-		padding: 2.5% 10%;
-	 }
+    }
+}
+@media ( max-width: 480px) {
+    .copy {
+        padding: 2.5% 10%;
+    }
+    .linediv-l{
+        border-left: 1px white solid;
+    }
+    .linediv-r{
+        border-right: 1px white solid;
+    }
+    .linediv-c{
+        border-right: 1px white solid;
+        border-left: 1px white solid;
 
-	  .linediv-l{
-		border-left: 1px white solid;
-	  }
-	  .linediv-r{
-		border-right: 1px white solid;
-	  }
-	  	  .linediv-c{
-		border-right: 1px white solid;
-				border-left: 1px white solid;
+    }
+}
+.statistics h3, .statistics p{
+    color: white;
+}
+body{
+    font-family: 'Open Sans',Helvetica,Arial,sans-serif;
 
-	  }
-	 }
-	 	 .statistics h3, .statistics p{
-		color: white;
-	 }
-	body{
-		font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+}
+.heading, .subheading{
+    font-family: 'Ubuntu', Helvatica, Arial, sans-serif;
+    text-align: center;
+}
+p.lead {
+    padding-top: 1.5%;
+    font-size: 24px;
+    line-height: 30px;
 
-	}
-	.heading, .subheading{
-		font-family: 'Ubuntu', Helvatica, Arial, sans-serif;
-		text-align: center;
-	}
-      p.lead {
-        padding-top: 1.5%;
-		font-size: 24px;
-		line-height: 30px;
-		
-      }
-      .navigation, .pitch, .section1, .section2, .faq, .footer {
-        padding: 10px 0px 10px 0px;
-      }
-      .video, .thermometer, .order, .social {
-        border: 1px dotted;
-        text-align: center;
-      }
-      .video {
-        /* Internal borders have 1px width, thus need to add 4 x 1px to 120px. */
-        height: 124px;
-        line-height: 124px;
-      }
-      .thermometer, .order, .social {
-        /* line-height to vertically center: http://phrogz.net/css/vertical-align/index.html */
-        height: 40px;
-        line-height: 40px;
-      }
-      div.row {
-        border: 1px solid;
-      }
-	  
-	  .heading{
-		text-align: center;
-	  }
-	  .actions{
-		background-color: #343434;
-		padding: 3% 0%;
-	  }
-	  .video , .order, .thermometer, .social, .statistics {
-		text-align: center;
-	  }
-    </style>
-  </head>
-  <body>
-    <div class="container ">
-	
-	
-	
-	
-      <div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="brand" href="#">Bitstarter</div>
-			<ul class="nav">
-				<li class="active">
-				  <a href="#">Home</a>
-				</li>
-				<li>
-				  <a href="#">About</a>
-				</li>
-				<li>
-				  <a href="#">Contact</a>
-				</li>
-			</ul>
-			
-		</div>
-        
-      </div>
+}
+.navigation, .pitch, .section1, .section2, .faq, .footer {
+    padding: 10px 0px 10px 0px;
+}
+
+.video, .thermometer, .order, .social {
+    border: 1px dotted;
+    text-align: center;
+}
+.video {
+    /* Internal borders have 1px width, thus need to add 4 x 1px to 120px. */
+    height: 124px;
+    line-height: 124px;
+}
+.thermometer, .order, .social {
+    /* line-height to vertically center: http://phrogz.net/css/vertical-align/index.html */
+    height: 40px;
+    line-height: 40px;
+}
+div.row {
+    border: 1px solid;
+}
+
+.heading{
+    text-align: center;
+}
+.actions{
+    background-color: #343434;
+    padding: 3% 0%;
+}
+.video , .order, .thermometer, .social, .statistics {
+    text-align: center;
+}
+.copy{
+    text-align: justify;
+}
+.footer{
+    color: #cccccc;
+    text-align:center;
+}
+.footer p{
+    font-size:11px;
+}
+.footer a{
+    color: #ccccff;
+}
+.order{
+    margin-bottom: 2.5%;
+}
+</style>
+</head>
+<body>
+<div class="container ">
 
 
 
 
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="brand" href="#">Bitstarter</div>
+            <ul class="nav">
+                <li class="active">
+                <a href="#">Home</a>
+                </li>
+                <li>
+                <a href="#">About</a>
+                </li>
+                <li>
+                <a href="#">Contact</a>
+                </li>
+            </ul>
 
-      <div class="row-fluid heading">
-        <div class="span12">
-          <h1>Product</h1>
         </div>
-      </div>
-     <div class="row-fluid subheading">
-        <div class="span12">
-          <p class="lead">This is my first bitstarter project.</p>
-        </div>
-      </div>
-	  
-	  
-	  
-	  
-	  
-	  
-      <div class="row-fluid pitch">
-        <div class="span5 offset1 video">
-          <img class="img-polaroid" src="//placehold.it/480x300" />
-        </div>
-		<div class="span5 actions">
-			<div class="span8 offset2">
-				<div class="statistics">
-					<div class="span4">
-						<div class="linediv-l">
-							<h3>1000</h3><p>bockers</p>
-						</div>
-					</div>
-					<div class="span4">
-						<div class="linediv-c">
-							<h3>6000</h3><p>of $10,000</p>
-						</div>
-					</div>
-					<div class="span4">
-						<div class="linediv-r">
-							<h3>10</h3><p>day left</p>
 
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="span10 offset1">
-				<div class="thermometer progress active">
-					<div class="bar bar-success" style="width:60%"></div>
-					<div class="bar bar-warning" style="width:40%"></div>
-				</div>
-			</div>
-
-			<div class="span6 offset3 order">
-				<button class="btn btn-success btn-large">Preorder</button>
-			</div>
-	  
-			<div class="span8 offset2 social">
-				<button class="btn btn-twitter"><i class="icon-twitter"></i>| Twitter</button>
-				<button class="btn btn-facebook"><i class="icon-facebook"></i>| Facebook</button>
-
-			</div>
-		
-		</div>
-	  
-	  </div>
-	  
-	  
-      <div class="row-fluid section1">
-        <div class="span12">
-          Marketing Section 1
-        </div>
-      </div>
-      <div class="row-fluid section2">
-        <div class="span12">
-          Marketing Section 2
-        </div>
-      </div>
-      <div class="row-fluid faq">
-        <div class="span12">
-          FAQ
-        </div>
-      </div>
-      <div class="row-fluid footer">
-        <div class="span12">
-          Footer
-        </div>
-      </div>
     </div>
-  </body>
+
+
+
+
+
+    <div class="row-fluid heading">
+        <div class="span12">
+            <h1>Product</h1>
+        </div>
+    </div>
+    <div class="row-fluid subheading">
+        <div class="span12">
+            <p class="lead">This is my first bitstarter project.</p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div class="row-fluid pitch">
+        <div class="span5 offset1 video">
+            <img class="img-polaroid" src="//placehold.it/480x300" />
+        </div>
+        <div class="span5 actions">
+            <div class="span8 offset2">
+                <div class="statistics">
+                    <div class="span4">
+                        <div class="linediv-l">
+                            <h3>1000</h3><p>bockers</p>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="linediv-c">
+                            <h3>6000</h3><p>of $10,000</p>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="linediv-r">
+                            <h3>10</h3><p>day left</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="span10 offset1">
+                <div class="thermometer progress active">
+                    <div class="bar bar-success" style="width:60%"></div>
+                    <div class="bar bar-warning" style="width:40%"></div>
+                </div>
+            </div>
+
+            <div class="span6 offset3 order">
+                <button class="btn btn-success btn-large">Preorder</button>
+            </div>
+
+            <div class="span8 offset2 social">
+                <button class="btn btn-twitter"><i class="icon-twitter"></i>| Twitter</button>
+                <button class="btn btn-facebook"><i class="icon-facebook"></i>| Facebook</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="row-fluid section1">
+        <div class="span5 offset1 asset">
+            <img class="img-polaroid" src="http://placehold.it/480x300">
+        </div>
+        <div class="span5 copy">
+            <p>
+            Once you have cloned the repo, if you are using CSS then:
+            Include Bootstrap and Font Awesome in your app (see this guide)
+            Include social-buttons.css in your app
+            Start using buttons!
+            Or if you are using LESS then: 1. Ensure Font Awesome is imported into your app (as CSS or LESS) 2. Import social-buttons.less into bootstrap.less 3. Build Bootstrap 4. Start using buttons.
+            Note: if you want to use Font Awesome, you should disable the icons mixin (by removing the sprites.less import in bootstrap.less).
+
+            Once you have cloned the repo, if you are using CSS then:
+            Include Bootstrap and Font Awesome in your app (see this guide)
+            Include social-buttons.css in your app
+            Start using buttons!
+            Or if you are using LESS then: 1. Ensure Font Awesome is imported into your app (as CSS or LESS) 2. Import social-buttons.less into bootstrap.less 3. Build Bootstrap 4. Start using buttons.
+            Note: if you want to use Font Awesome, you should disable the icons mixin (by removing the sprites.less import in bootstrap.less).
+            </p>
+        </div>
+    </div>
+
+    <div class="row-fluid section2">
+
+        <div class="span5 offset1 copy">
+            <p>
+            Once you have cloned the repo, if you are using CSS then:
+            Include Bootstrap and Font Awesome in your app (see this guide)
+            Include social-buttons.css in your app
+            Start using buttons!
+            Or if you are using LESS then: 1. Ensure Font Awesome is imported into your app (as CSS or LESS) 2. Import social-buttons.less into bootstrap.less 3. Build Bootstrap 4. Start using buttons.
+            Note: if you want to use Font Awesome, you should disable the icons mixin (by removing the sprites.less import in bootstrap.less).
+
+            Once you have cloned the repo, if you are using CSS then:
+            Include Bootstrap and Font Awesome in your app (see this guide)
+            Include social-buttons.css in your app
+            Start using buttons!
+            Or if you are using LESS then: 1. Ensure Font Awesome is imported into your app (as CSS or LESS) 2. Import social-buttons.less into bootstrap.less 3. Build Bootstrap 4. Start using buttons.
+            Note: if you want to use Font Awesome, you should disable the icons mixin (by removing the sprites.less import in bootstrap.less).
+            </p>
+        </div>
+        <div class="span5 asset">
+            <img class="img-polaroid" src="http://placehold.it/480x300">
+        </div>
+    </div>
+    <div class="row-fluid faq">
+        <div class="span12">
+            <h3>FAQ</h3>
+            <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+
+                            What does FAQ stand for?
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+
+                            Freq Asked Ques
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                            Freq Asked Ques
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            What is a Freq Asked Ques
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row-fluid footer">
+        <div class="span12">
+            <p>
+            This work is licensed under
+            the <a href="http://google.com/">CC By-SA 3.0  </a>
+        </div>
+    </div>
+</div>
+</body>
 </html>
